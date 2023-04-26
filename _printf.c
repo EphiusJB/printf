@@ -24,13 +24,13 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			buffer[buff_index++] = format[i];
-			if (buff_ind == BUFF_SIZE)
-				print_buffer(buffer, &buff_ind);
+			if (buff_index == BUFF_SIZE)
+				print_buffer(buffer, &buff_index);
 			printed_chars++;
 		}
 		else
 		{
-			print_buffer(buffer, &buff_ind);
+			print_buffer(buffer, &buff_index);
 			flags = get_flags(format, &i);
 			width = get_width(format, &i, list);
 			precision = get_precision(format, &i, list);
